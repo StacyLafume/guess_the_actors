@@ -1,4 +1,4 @@
-# guess_the_actors
+# Guess the actors
 
 Welcome to the Celebrity Movie Game!
 The Celebrity Name Game is a game that consists of matching the right actors to the movie they were in.
