@@ -25,7 +25,7 @@ const Search = () => {
 
     }
 
-
+    // eslint-disable-next-line 
     useEffect(() => { fetchSearch() }, []);
 
     return (

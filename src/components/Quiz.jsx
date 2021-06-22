@@ -1,11 +1,11 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState } from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button'
 
-const Quiz = ({ cast, movie, answers, setSearchText }) => {
+const Quiz = ({ cast, movie, answers, setSearchText, setAnswers, setMovie }) => {
     const [checkBoxes, setCheckBoxes] = useState({
         0: false,
         1: false,
@@ -33,12 +33,21 @@ const Quiz = ({ cast, movie, answers, setSearchText }) => {
         if (correctAnswers === 3) {
 
             setScore(score + 1)
+            setSearchText("")
+            setAnswers([])
+            setMovie([])
         }
         correctAnswers = 0
-        // for(let i = 0; i < 5; i++){
-        // setCheckBoxes({ ...checkBoxes, [i]: false })
-        // }
-        setSearchText("")
+       
+        setCheckBoxes({
+            0: false,
+            1: false,
+            2: false,
+            3: false,
+            4: false
+        })
+    
+        
     }
 
     let answersEnabled = true
@@ -58,12 +67,13 @@ const Quiz = ({ cast, movie, answers, setSearchText }) => {
 
     return (
         <>
+         <p> Your score is {score}</p>
             <p>
                 Which three actors are in <b>"{movie}"</b>?
         </p>
             <FormControl component="fieldset">
                 <FormGroup aria-label="position" row style={{ display: 'block' }}>
-                    {answers === undefined ? null : answers.map((answer, i) =>
+                    {answers.map((answer, i) =>
                         <FormControlLabel
                             key={i}
                             checked={checkBoxes[i]}
@@ -80,7 +90,7 @@ const Quiz = ({ cast, movie, answers, setSearchText }) => {
                 </FormGroup>
                 <Button variant="contained" style={{ width: 600 }} onClick={() => { handleAfterSubmit() }}>Submit</Button>
             </FormControl>
-            <p> Your score is {score}</p>
+           
             <div>
             </div>
         </>

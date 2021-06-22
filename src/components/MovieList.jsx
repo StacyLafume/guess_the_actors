@@ -8,8 +8,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import axios from 'axios';
 import Quiz from './Quiz';
 
-
-
 const MovieList = ({ movieArray, setSearchText }) => {
     const [cast, setCast] = useState([])
     const [wrongCast, setWrongCast] = useState([])
@@ -23,7 +21,7 @@ const MovieList = ({ movieArray, setSearchText }) => {
         }
     }));
     const classes = useStyles();
-    
+
     const shuffle = (array) => {
         let currentIndex = array.length, randomIndex;
 
@@ -118,8 +116,10 @@ const MovieList = ({ movieArray, setSearchText }) => {
                 cast={cast}
                 wrongCast={wrongCast}
                 movie={movie}
+                setAnswers={setQuizOptions}
                 answers={quizOptions}
                 setSearchText={setSearchText}
+                setMovie={setMovie}
             />
         </div>
     )
