@@ -26,6 +26,7 @@ const Quiz = ({
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleCheckBoxAnswer = (event) => {
+      //pass in previous state and override it with user answer
     setCheckBoxes({ ...checkBoxes, [event.target.name]: event.target.checked });
   };
 

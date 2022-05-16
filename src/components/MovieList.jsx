@@ -75,6 +75,9 @@ const MovieList = ({ movieArray, setSearchText }) => {
   const handleGetData = (id, offId, title) => {
     const correctCast = getMovieInfo(id);
     const notCorrectCast = getWrongMovieInfo(offId);
+    // aggregating the results of multiple promises. 
+    //It is typically used when there are multiple related asynchronous tasks 
+    //that the overall code relies on to work successfully
     Promise.all([correctCast, notCorrectCast]).then((response) => {
       const shuffledArray = shuffle([...response[0], ...response[1]]);
       setQuizOptions(shuffledArray);
