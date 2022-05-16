@@ -80,7 +80,7 @@ const Quiz = ({
         open={isSuccess}
         autoHideDuration={3000}
         message="Congratulations, you won!"
-        anchorOrigin={{ vertical: 'center', horizontal: 'center' }}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         onClose={()=> setIsSuccess(false)}
       >
         <Alert severity="success" sx={{ width: "100%" }}>

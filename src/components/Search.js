@@ -31,8 +31,8 @@ const Search = () => {
         Guess the Actors
       </Typography>
       <Typography variant="h5" gutterBottom={true}>
-        This celebrity name game is a game that consists of matching the right
-        actors to the movie they were in. Three of the actors played in the
+        This celebrity name game consists of matching the right
+        actors to the movie they played in. Three of the actors played in the
         movie and two did not, good luck guessing!
       </Typography>
       <TextField
