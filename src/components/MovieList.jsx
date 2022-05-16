@@ -93,7 +93,12 @@ const MovieList = ({ movieArray, setSearchText }) => {
           expandIcon={<ExpandMoreIcon />}
         >
           <Typography className={classes.heading}>
-            Movie List {movieArray.length ? movieArray.length : ""} matches
+            Movie List{" "}
+            {movieArray.length === 1
+              ? `${movieArray.length} match`
+              : movieArray.length
+              ? `${movieArray.length} matches`
+              : ""}
           </Typography>
         </AccordionSummary>
         {movieArray.map((movie, i) => {
